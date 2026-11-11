@@ -291,3 +291,24 @@ footer a { color: var(--on-dark); }
   html { scroll-behavior: auto; }
   .btn, .q, .q-answer, .q-more::after { transition: none; }
 }
+
+/* ── 언어 바꾸기 링크 ───────────────── */
+.lang-switch {
+  display: inline-flex; align-items: center;
+  padding: 6px 12px; border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: var(--on-dark); text-decoration: none; font-size: 14px; line-height: 1;
+}
+.lang-switch:hover { background: rgba(255, 255, 255, 0.12); }
+.policy-top .lang-switch { position: absolute; top: 0; right: 16px; }
+@media (min-width: 720px) { .policy-top .lang-switch { right: 32px; } }
+.policy .note { margin-top: 28px; color: var(--ink-soft); font-size: 14px; }
+
+/* 좁은 화면: 영어 이름·버튼이 길어 머리 줄이 넘치지 않게 */
+.top .btn, .lang-switch { white-space: nowrap; flex: none; }
+.top .brand { min-width: 0; }
+@media (max-width: 719px) {
+  .top nav { gap: 10px; }
+  .top .brand { font-size: 16px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .top .brand img { width: 30px; height: 30px; }
+}
