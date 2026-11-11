@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>한국사 노트</title>
+  <link rel="icon" type="image/png" href="icons/favicon-64.png">
+  <script>
+    // 처음 접속하면 브라우저 언어에 맞는 페이지로 보낸다. 지금은 한국어만 있어 모두 한국어로 간다.
+    (function () {
+      var pages = { ko: 'index-ko.html' };
+      var langs = navigator.languages || [navigator.language || 'ko'];
+      var target = pages.ko;
+      for (var i = 0; i < langs.length; i++) {
+        var code = String(langs[i]).toLowerCase().split('-')[0];
+        if (pages[code]) { target = pages[code]; break; }
+      }
+      location.replace(target + location.hash);
+    })();
+  </script>
+  <noscript><meta http-equiv="refresh" content="0; url=index-ko.html"></noscript>
+</head>
+<body style="background:#F7F3EA">
+  <p style="font-family:sans-serif;padding:16px"><a href="index-ko.html">한국사 노트 홈페이지로 이동</a></p>
+</body>
+</html>
